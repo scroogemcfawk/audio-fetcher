@@ -1,0 +1,19 @@
+.k {
+    display: block;
+    cursor: pointer;
+    width: 150px;
+    height: 30px;
+}
+
+#music {
+    width: 500px;
+}
+
+audio {
+    border: 0;
+    display: block;
+}
+
+label {
+    display: block;
+}
