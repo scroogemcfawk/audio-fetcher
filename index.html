@@ -5,27 +5,9 @@
     <title>Test</title>
     <link href="style.css" rel="stylesheet">
 </head>
-<body>
+<body onload="initElements()">
 <div id="main">
-    <label>
-        Link to mp3 file:
-        <input id="music" value="https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3">
-    </label>
-    <button class="k" onclick="loadMusic()">Load</button>
-    <audio controls id="audi" src=""></audio>
-    <label>
-        Start (sec):
-        <input id="startV" value="33">
-    </label>
-    <label>
-        End (sec):
-        <input id="endV" value="40">
-    </label>
-    <button class="k" onclick="playCustom()">Play A to B</button>
-    <button class="k" onclick="stopAudio()">Stop</button>
-    <button class="k" onclick="resumeAudio()">Play</button>
-    <button class="k" onclick="whatTime()">Log currentTime</button>
-    <button class="k" onclick="loadJSONArray()">Load JSON</button>
+    <button id="loadFragmentsButton" onclick="setUpButtons()">Load Fragments</button>
 </div>
 </body>
 <script src="audioTest.js">
