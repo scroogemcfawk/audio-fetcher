@@ -1,5 +1,34 @@
 // var ad = navigator.mediaDevices.getDisplayMedia({audio: true})
 var audio = document.getElementById("audi")
+var jsonArray
+
+function getJSON(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true)
+    xhr.responseType = 'json'
+    xhr.onload = function() {
+        var status = xhr.status
+        if (status === 200) {
+            callback(null, xhr.response)
+        } else {
+            callback(status, xhr.response)
+        }
+    }
+    xhr.send()
+}
+
+function responseHandler(status, data) {
+    if (status !== null) {
+        console.log("Something went wrong")
+    } else {
+        console.log(data)
+    }
+}
+
+function loadJSONArray() {
+    getJSON("https://marigostra.ru/persist/proj-player/fragments.json", responseHandler)
+}
+
 
 function playCustom() {
     var s = parseFloat(document.getElementById("startV").value)
